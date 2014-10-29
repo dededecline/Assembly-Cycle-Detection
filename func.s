@@ -64,26 +64,26 @@ reverse:
 	mov %esp, %ebp #move top of stack to bottom of stack
 	mov 8(%esp), %ecx #move pointer into ecx
 	cmp $0, %ecx
-    jz end
+    	jz end
 loop:
 	push 4(%ecx)
-    mov (%ecx), %ecx
-    cmp $0, %ecx
-    jz orig
-    jmp loop
+    	mov (%ecx), %ecx
+    	cmp $0, %ecx
+    	jz orig
+    	jmp loop
 orig:
 	mov %ebp, %ecx
-    mov 8(%ebp), %ecx
+    	mov 8(%ebp), %ecx
 popit:
 	pop 4(%ecx)
-    mov (%ecx), %ecx
-    cmp $0, %ecx
-    jz end
-    jmp popit
+    	mov (%ecx), %ecx
+    	cmp $0, %ecx
+    	jz end
+    	jmp popit
 end:
 	mov %ebp, %esp
-    pop %ebp
-    ret
+    	pop %ebp
+    	ret
 
 
 
